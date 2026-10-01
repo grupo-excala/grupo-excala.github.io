@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Grupo Excala · Lubricación</title>
+  <script>
+    // ============================================================
+    //  PEGUE AQUÍ LA URL DE SU APP (la que termina en /exec)
+    // ============================================================
+    var APP = 'https://script.google.com/a/macros/grupoexcala.com/s/AKfycbw4-WkuTjoKYBizuiNGf2D5NoZfeoz-WT4vS290R4xJgZzvPbhnSMXOPEpEMDJ1Y7yUYg/exec';
+
+    // El QR trae el código de la placa después del "?"  →  https://…github.io/?0007
+    var codigo = (location.search || '').replace(/^\?/, '').split('&')[0];
+    var destino = APP + (codigo ? (APP.indexOf('?') >= 0 ? '&' : '?') + 'p=' + encodeURIComponent(codigo) : '');
+    if (APP.indexOf('http') === 0) location.replace(destino);
+  </script>
+  <style>
+    body { margin: 0; font-family: system-ui, Arial, sans-serif; background: #f4f6f5; color: #3f5250;
+      display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
+    .caja { background: #fff; border-top: 5px solid #aaac00; border-radius: 12px; padding: 28px 24px; max-width: 320px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+    a { display: inline-block; margin-top: 14px; background: #5e7774; color: #fff; padding: 12px 20px;
+      border-radius: 10px; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="caja">
+    <div style="font-size:12px;letter-spacing:.08em">GRUPO <b>EXCALA</b></div>
+    <p>Abriendo la app de lubricación…</p>
+    <a id="enlace" href="#">Abrir manualmente</a>
+  </div>
+  <script>document.getElementById('enlace').href = destino;</script>
+</body>
+</html>
